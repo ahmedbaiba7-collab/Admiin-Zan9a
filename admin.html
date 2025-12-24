@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin | Zan9a RP</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="apply-container">
+  <h1>🧑‍💼 Admin Dashboard</h1>
+  <table width="100%">
+    <tr><th>RP</th><th>Discord</th><th>Age</th><th>Status</th></tr>
+    <tbody id="list"></tbody>
+  </table>
+</div>
+
+<script>
+let apps = JSON.parse(localStorage.getItem("applications")) || [];
+let html = "";
+apps.forEach(a=>{
+  html += `<tr>
+    <td>${a.name}</td>
+    <td>${a.discord}</td>
+    <td>${a.age}</td>
+    <td>${a.status}</td>
+  </tr>`;
+});
+document.getElementById("list").innerHTML = html;
+</script>
+
+</body>
+</html>
